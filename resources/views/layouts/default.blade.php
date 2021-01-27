@@ -11,7 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{-- style --}}
+    @stack('before-style')
     @include('includes.style')
+    @stack('after-style')
 
 </head>
 
@@ -35,7 +37,9 @@
     <!-- /#right-panel -->
 
     {{-- script --}}
+    @stack('before-script')
     @include('includes.script')
+    @stack('after-script')
 
 </body>
 </html>
