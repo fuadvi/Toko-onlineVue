@@ -14,4 +14,8 @@ use App\Http\Controllers\DasboardController;
 |
 */
 
-Route::get('/', [DasboardController::class, 'index']);
+Route::get('/', [DasboardController::class, 'index'])->middleware(['auth:sanctum', 'verified']);
+
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
