@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DasboardController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,9 @@ use App\Http\Controllers\DasboardController;
 |
 */
 
-Route::get('/', [DasboardController::class, 'index'])->middleware(['auth:sanctum', 'verified']);
+Route::middleware(['auth:sanctum'])->get('/', [DasboardController::class, 'index'])->name('dashboard');
+
+Route::resource('/product', ProductController::class);
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');

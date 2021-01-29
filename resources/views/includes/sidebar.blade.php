@@ -8,10 +8,10 @@
                     </li>
                     <li class="menu-title">Barang</li><!-- /.menu-title -->
                     <li class="">
-                        <a href="#"> <i class="menu-icon fa fa-list"></i>Lihat Barang</a>
+                        <a href="{{ route('product.index') }}"> <i class="menu-icon fa fa-list"></i>Lihat Barang</a>
                     </li>
                     <li class="">
-                        <a href="#"> <i class="menu-icon fa fa-plus"></i>Tambah Barang</a>
+                        <a href="{{ route('product.create') }}"> <i class="menu-icon fa fa-plus"></i>Tambah Barang</a>
                     </li>
 
                     <li class="menu-title">Foto Barang</li><!-- /.menu-title -->
