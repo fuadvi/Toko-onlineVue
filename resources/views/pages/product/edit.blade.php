@@ -23,7 +23,7 @@
                 <label for="type" class="form-control-label">Tipe Barang</label>
                 <input type="text"
                         name="type" 
-                        value="{{ old('type') ? old('type') $item->type }}" 
+                        value="{{ old('type') ? old('type') : $item->type }}" 
                         class="form-control @error('type') is-invalid @enderror" />
                 @error('type')
                     <div class="text-muted">{{ $massage }}</div>
@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="description" class="form-control-label">Deskripsi Barang</label>
-                <textarea name="description" class="ckeditor form-control @error('description') is-invalid @enderror">{{ old('description') ? old('description') $item->description }}</textarea>
+                <textarea name="description" class="ckeditor form-control @error('description') is-invalid @enderror">{{ old('description') ? old('description') : $item->description }}</textarea>
                 @error('description')
                     <div class="text-muted">{{ $massage }}</div>
                 @enderror
@@ -40,7 +40,7 @@
                 <label for="price" class="form-control-label">Harga Barang</label>
                 <input type="number"
                         name="price" 
-                        value="{{ old('price') ? old('price') $item->price}}" 
+                        value="{{ old('price') ? old('price') : $item->price}}" 
                         class="form-control @error('price') is-invalid @enderror" />
                 @error('price')
                     <div class="text-muted">{{ $massage }}</div>
@@ -50,7 +50,7 @@
                 <label for="quantity" class="form-control-label">Kuantitas Barang</label>
                 <input type="number"
                         name="quantity" 
-                        value="{{ old('quantity') ? old('quantity') $item->quantity }}" 
+                        value="{{ old('quantity') ? old('quantity') : $item->quantity }}" 
                         class="form-control @error('quantity') is-invalid @enderror" />
                 @error('quantity')
                     <div class="text-muted">{{ $massage }}</div>

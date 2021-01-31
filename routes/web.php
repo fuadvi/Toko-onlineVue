@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DasboardController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductGalleryContorller;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,10 @@ use App\Http\Controllers\ProductController;
 
 Route::middleware(['auth:sanctum'])->get('/', [DasboardController::class, 'index'])->name('dashboard');
 
+Route::get('product/{id}/gallery', [ProductController::class, 'gallery'])->name('product.gallery');
+
 Route::resource('/product', ProductController::class);
+Route::resource('/product-galleries', ProductGalleryContorller::class);
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
