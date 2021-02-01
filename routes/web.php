@@ -23,6 +23,8 @@ Route::get('product/{id}/gallery', [ProductController::class, 'gallery'])->name(
 
 Route::resource('/product', ProductController::class);
 Route::resource('/product-galleries', ProductGalleryContorller::class);
+
+Route::get('transaction/{id}/set-status', [TransactionController::class, 'setStatus'])->name('transaction.status');
 Route::resource('/transaction', TransactionController::class);
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
