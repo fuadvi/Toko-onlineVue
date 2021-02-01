@@ -2,10 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
 {
+
+    public function __construct()
+    {
+        return $this->middleware(['auth']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,11 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        $items = Transaction::all();
+
+        return view('pages.transaction.index')->with([
+            'items' => $items
+        ]);
     }
 
     /**
@@ -45,7 +57,11 @@ class TransactionController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = Transaction::with('details.product')->findOrFail($id);
+
+        return view('pages.transaction.show')->with([
+            'item' => $item
+        ]);
     }
 
     /**
