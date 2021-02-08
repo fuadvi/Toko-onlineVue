@@ -53,7 +53,7 @@ class ProductController extends Controller
             $product->where('price', '<=', $price_to);
 
         return ResponseFromatter::success(
-            $product->paginate(15),
+            $product->paginate($limit),
             'Data list Berhasil Diambil'
         );
     }
